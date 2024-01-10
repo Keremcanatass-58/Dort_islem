@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function hesapla()
+        {
+            var sayi1=Number(document.getElementById('bir').value);
+            var sayi2=Number(document.getElementById('iki').value);
+            var islem=document.getElementById('islem').value;
+
+            if(islem=="1")
+            {
+                document.getElementById('sonuc').value=sayi1+sayi2;
+            }
+            else if(islem=="2")
+            {
+                document.getElementById('sonuc').value=sayi1-sayi2;
+            }
+            else  if(islem=="3")
+            {
+                document.getElementById('sonuc').value=sayi1*sayi2;
+            }
+            else  if(islem=="4")
+            {
+                document.getElementById('sonuc').value=sayi1/sayi2;
+            }
+            else
+            {
+                document.getElementById('hata').innerHTML="Hatalı İşlem No!";
+            }
+        }
+        function temizle()
+        {
+            document.getElementById('bir').value="";
+            document.getElementById('iki').value="";
+            document.getElementById('islem').value="";
+            document.getElementById('sonuc').value="";
+            document.getElementById('hata').value="";
+        }
+    </script>
+    <style>
+        #hata
+        {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+       1.Sayı: <input type="text" id="bir">
+       <br>
+       2.Sayı: <input type="text" id="iki">
+       <br>
+       <br>
+       1.Toplama &nbsp; &nbsp; &nbsp; 2.Çıkarma &nbsp; &nbsp; &nbsp; 3.Çarpma &nbsp; &nbsp; &nbsp; 4.Bölme
+       <br>
+       <br>
+       İşlem No: <input type="text" id="islem">
+       <br>
+       <br>
+       Sonuç: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" id="sonuc"><br><br>
+       <input type="button" value="hesapla" onclick="hesapla();"> &nbsp; &nbsp; &nbsp;
+       <input type="button" value="temizle" onclick="temizle();">
+    </form>
+
+    <h1 id="hata"></h1>
+
+</body>
+</html>
